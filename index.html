@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="lt">
+    <meta charset="UTF-8">
+<head>
+	<title>GUI</title>
+    <link rel="stylesheet" href="style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+		function button1() {
+            var video = document.getElementById("video");
+            var constraints = { video: true };
+
+        navigator.mediaDevices.getUserMedia(constraints)
+            .then(function(stream) {
+                video.srcObject = stream;
+            })
+            .catch(function(error) {
+                console.log("Unable to access camera: " + error);
+            });
+        }
+	    function button2() {
+            var video = document.getElementById("video");
+            video.srcObject = null;
+        }
+		function button3() {
+           
+        }
+	</script>
+</head>
+<body>
+	<h1 lang="lt">Ismanaus namu duru vaizdo skambutis</h1>
+    <button onclick="button1()">Parodyti kameros vaizdą</button>
+	<button onclick="button2()">Išjungti kameros vaizdą</button>
+	<button onclick="button3()">Peržiūrėti veidų sąrašą</button>
+    <div id="container">
+        <video id="video" autoplay width="250" height="250"></video>
+    </div>
+    
+</body>
+</html>
