@@ -1,0 +1,15 @@
+#container {
+    position: relative;
+}
+
+#video {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#container button {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
